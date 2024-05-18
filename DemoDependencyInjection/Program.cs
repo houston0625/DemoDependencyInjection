@@ -16,14 +16,20 @@ namespace DemoDependencyInjection
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            
-            //builder.Services.AddKeyedSingleton<IComplete, CompleteAdd>("add");
-            //builder.Services.AddKeyedSingleton<IComplete, CompleteRemove>("remove");
-            //builder.Services.AddKeyedSingleton<IComplete, CompleteEdit>("edit");
+
+
+            #region 原本的寫法
+
             builder.Services.AddScoped<CompleteAdd>();
             builder.Services.AddScoped<CompleteRemove>();
             builder.Services.AddScoped<CompleteEdit>();
-            
+
+            #endregion
+
+            //builder.Services.AddKeyedSingleton<IComplete, CompleteAdd>("add");
+            //builder.Services.AddKeyedSingleton<IComplete, CompleteRemove>("remove");
+            //builder.Services.AddKeyedSingleton<IComplete, CompleteEdit>("edit");
+
             builder.Services.AddScoped<FinalService>();
 
 
